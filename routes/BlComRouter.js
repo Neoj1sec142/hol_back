@@ -14,10 +14,6 @@ router.post('/create/blogcomm-:blogcomm_id/user-:blogcomm_id',
   middleware.verifyToken,
   controller.CreateBlogCom)
 
-// router.put('/update/:blogcomm_id', 
-//   middleware.stripToken,
-//   middleware.verifyToken,
-//   controller.UpdateBlogCom)
 
 router.delete('/delete/:blogcomm_id', 
   middleware.stripToken,
