@@ -47,19 +47,10 @@ const GetFollowingByFollowerId = async (req, res) => {
     
 
 const FollowUser = async (req, res) => {
-  try {
-    // const exists = await UserFollower.findOne({
-      //   where: [
-        //     {userId: req.params.user_id},
-        //     {followerId: req.params.follower_id}
-        //   ]
-        // })
-        // console.log("EXISTS", exists)
-        
+  try {    
         const follow = await Follower.create(
           { userId: req.params.user_id, followerId: req.params.follower_id },
           )
-          // // if (!exists || !exists.length) {    // } 
       res.send(follow)
   } catch (error) {
     throw error

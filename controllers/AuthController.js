@@ -1,7 +1,6 @@
 const { User } = require('../models')
 const middleware = require('../middleware')
 
-
 const Register = async (req, res) => {
   try {
     const {fullname, username, email, password } = req.body
@@ -14,8 +13,6 @@ const Register = async (req, res) => {
   }
 }
 
-
-
 const Login = async (req, res) => {
   try {
     const user = await User.findOne({
@@ -27,7 +24,6 @@ const Login = async (req, res) => {
     ) {
       let payload = {id: user.id, username: user.username }
       let token = middleware.createToken(payload)
-      // console.log("PAYLOAD", payload)
       return res.send({ user: payload, token})
     }
     res.status(401).send( {status: 'Error', msg: 'Unauthorized, try again.'} )
@@ -57,7 +53,6 @@ const UpdatePassword = async (req, res) => {
 }
 
 const CheckSession = async (req, res) => {
-  // console.log("CHECK SESSION", res.locals)
   const { payload } = res.locals
   res.send(payload)
 }

@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       thoughts: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       url: {
         type: Sequelize.STRING

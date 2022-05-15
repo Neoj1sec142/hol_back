@@ -28,7 +28,7 @@ const GetPostsByUserId = async (req, res) => {
 
 const GetPostById = async (req, res) => {
   try {
-    // console.log('here')
+    
     const post = await Post.findOne({
       where: {id: req.params.post_id},
       include: [

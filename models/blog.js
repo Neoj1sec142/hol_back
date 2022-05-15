@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     type: DataTypes.STRING,
-    thoughts: DataTypes.STRING,
+    thoughts: DataTypes.TEXT,
     url: DataTypes.STRING
   }, {
     sequelize,
